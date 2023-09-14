@@ -1,0 +1,160 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Get_City_Weather" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_City" Type="InArgument(x:String)" />
+    <x:Property Name="out_Temperature" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>872.6666666666666,1429.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Get_City_Weather_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Get_City_Weather" sap:VirtualizedContainerService.HintSize="546,1364.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="This automation takes a city name as input and returns temperature of that city. It uses Google.com search service to give weather details for the searched city.&#xA;&#xA;INPUT:&#xA;     in_CIty: City name for which temperature value is needed&#xA;   &#xA;OUTPUT:&#xA;      out_Temperature: Current temperature of the city&#xA;&#xA;EXCEPTION:&#xA;       In case of failure due to invalid city or environmet issue, this workflow will fail" AttachMode="ByInstance" DisplayName="Use Browser Edge: Google" sap:VirtualizedContainerService.HintSize="484,1254" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="68a169fd-1234-4ac5-9388-afc9408af867" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,839.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="388,62" sap2010:WorkflowViewState.IdRef="Comment_1" Text="##*Search weather for the given city*" />
+            <uix:NTypeInto ActivateBefore="True" DelayBetweenKeys="0.4" DisplayName="Type Into (Search Text)" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="68a169fd-1234-4ac5-9388-afc9408af867" Text="[&quot;weather in &quot; + in_City]">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.google.com/" CvElementArea="531, 447, 870, 71" CvTextArea="601, 471, 179, 22" CvTextArgument="weather in noida" CvType="InputBox" DesignTimeRectangle="605, 467, 593, 41" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'weather in noida'" FullSelectorArgument="&lt;webctrl id='APjFqb' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='APjFqb' tag='TEXTAREA' type='search' class='gLFyf' aaname='Search' /&gt;" Guid="db61dab9-2219-49dd-a216-a11a2f443aae" ImageBase64="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" InformativeScreenshot="c130ae5cb22f37ce252c89dd8c1cdf06.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click (Google Search)" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="68a169fd-1234-4ac5-9388-afc9408af867" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.google.com/" CvElementArea="747, 992, 191, 57" CvTextArea="771, 1009, 142, 24" CvTextArgument="Google Search" CvType="Button" DesignTimeRectangle="746, 992, 192, 58" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Google Search'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='gNO89b' aaname='Google Search' check:text='Google Search' /&gt;" Guid="a41b58ea-e39d-404d-b6fb-bd29b3392a8b" ImageBase64="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" InformativeScreenshot="ae1e2978b16651a93bd7ea1bbd38d07d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text (Temperature)" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="68a169fd-1234-4ac5-9388-afc9408af867" TextString="[out_Temperature]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=weather+in+noida&amp;sca_esv=564986265&amp;source=hp&amp;ei=Uo0BZc6TK8b-hwOdwqnoCg&amp;iflsig=AD69kcEAAAAAZQGbYldLZ4fQ3KI7mbsxWwGJFeCKiuUs&amp;ved=0ahUKEwjOhK31rqeBAxVG_2EKHR1hCq0Q4dUDCAk&amp;uact=5&amp;oq=weather+in+noida&amp;gs_lp=Egdnd3Mtd2l6IhB3ZWF0aGVyIGluIG5vaWRhMggQABiABBixAzIFEAAYgAQyBRAAGIAEMggQABiABBixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEjI3wtQAFiIEnAAeACQAQKYAcoEoAGOHKoBDDAuMTIuMS4xLjAuMrgBA8gBAPgBAcICBxAAGIoFGEPCAg0QABiKBRixAxiDARhDwgILEAAYgAQYsQMYgwHCAg8QABiKBRixAxhDGEYYgALCAgoQABiKBRixAxhDwgIOEAAYgAQYsQMYgwEYyQPCAggQABiKBRiSA8ICCxAAGIoFGLEDGIMBwgINEAAYgAQYsQMYRhiAAg&amp;sclient=gws-wiz" CvType="AnyWordGroup" DesignTimeRectangle="275, 496, 77, 90" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'33'" FullSelectorArgument="&lt;webctrl id='wob_tm' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='wob_tm' tag='SPAN' type='' class='wob_t q8U8x' /&gt;" Guid="8f9e17e9-9800-4122-bf30-b4e8e42970ad" ImageBase64="" InformativeScreenshot="a2af96f7d93c59d7c004971fa4c67da2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='weather in noida - Google Search' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1102" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARHSURBVFhHvZddbBRVFMf7YrAq+OSbD6Kgb0qUUh60xq9VtA8k1EJrH1CsGIM+GLUmBA0kFi0WSMCHLcVCTMO2GmjFCiUFpH60sUjMEtIGLaAWama32w92dt2vOf7PndPd3M7sdmobf8k/M/fec8//zJ07s7NFXrEsawlUnclkmqEBaAxKisLS14yYKo6VafMHyR5A4hYoTh5BbAw6iLnLJc3cQZ7bkKQRSttp5w7mpqBdKKRY0noDE+7HxEuSZ94gVxA5l0n6wiDwYUwIyVyN9I0RMls/p4l33qDwi8+R4VtNxjOlFF7no/G3XyfzcBOlR/6UaB3kNHBYITbuyJU7zNOj12ly+/tkPL2KjKdKCgsxkx++p+bMhIvIuxIYuB0BjmWPn+qi0Atl7mYFFCp/nP45e0qy5IAH3w7nnsBAo8RkMY8cck3uVVMN2yWTDrwaxNYGFfGjpu12vnK3pKxIbRVFD+yj+DdHKd51DOf7KfJatRYztbueyLIkmw68UtqtQEeLjCl4s4Wef0xLyBqrWUuJ8/0S5SQx0EfhDeV0c/+n0pMfeDYrc5zfiYb2konufdNhPr7lZbKmpiQiP5YZlbPCwNPEKizm5a+WPoUVG6ZU9yKarLsna86PXGYiIhELB7zX8/I3S1uRuVpPqZ5blMx9d1FozUqKnzwuowsLvP1cwIC0FelffNkCWImjS4lSKRldWODdzwWMSVuR6r1bKyB9sUpG3Hnyo6hnnb2kXwi8DS4gKW1F6vQirYDM79tkxB03o3xq/VGz4gIS/2sBLecSMstmuoCwtBWOWxDcICPuuBnlU3u/YwXULdA34YVntQJGeh+kZGbum/CKkXEUcG7QsQfUJpzxGH6cNT/etZQeDayljuEeGfVOoC/pKGB0Qn81w9vPLyJtm1uxqxTrKab6jkdoZWCdkq/jFQrHxyVidm7GLarYa2rmG/0xGc0B70ouYAkq0Ub39O3Imk+rpvtdmkjM/ipO4iet7khcM2e1Oe+/icMd6vcAjYN2t82NqEFlX73kKKL8683Ue/28RDm5PH6NNnUGYDipmfNqxBKO5W9S5gxWYTk6tB1y4lqvo4BpVXz7FjVeaKH2yyfoy99O0mfBVnq1ZyuVBCrUeOmhOnrik7+yBXw/pH/XwisJz/vE3gadu2Q8yxdDnQ5zrypp3Uhlu392PPsMvHaKbQ7082f4RTskR/cfP+B21LiaFFJpWyUdCHZKlhzw+BWHW8VWB8uyDAH89aoxaoZo6097aFWbvcSzafOZD2gwMiyzcyD33zjcK3buIGCFWxEMb87Dg8doy3c7aE1nLa1ur1RX6uvYRLWnt6m9MBS5ItE6bI4LfEhsCiMrEZS58wa5eNkLX/lMUEQxJjZA//ljAHP5j+tOnLrfcy/IavA/Yn5xeIJjoSbM1R+1+YBki6H1SOyH+iEDSoj4nPv8iKlEDfYbblaKiv4FoeF/NqqvoEMAAAAASUVORK5CYII=" InformativeScreenshot="43be02020a85265834cd363ee06b9e5c.jpg" Selector="&lt;html app='msedge.exe' title='Google' /&gt;" Title="Google" Url="https://www.google.com/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
